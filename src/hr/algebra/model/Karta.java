@@ -31,11 +31,7 @@ public class Karta {
         return slikaFace;
     }
 
-    public void Aktiviraj() {
-        okrenuta = true;
-    }
-
-    public void Deaktiviraj() {
-        okrenuta = false;
+    public void Okreni() {
+        okrenuta = !okrenuta;
     }
 }

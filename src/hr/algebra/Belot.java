@@ -20,7 +20,7 @@ public class Belot extends Application {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("view/GlavniMeni.fxml"));
-            Scene scene = new Scene(root, 600, 400);
+            Scene scene = new Scene(root, 847, 530);
             primaryStage.setTitle("Belot");
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -29,9 +29,6 @@ public class Belot extends Application {
         }
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }

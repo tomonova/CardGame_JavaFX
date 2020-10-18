@@ -5,12 +5,17 @@
  */
 package hr.algebra.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -28,10 +33,15 @@ public class GlavniMeniController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
-    private void BtnIgraj_Click(ActionEvent event) {
+    private void BtnIgraj_Click(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/hr/algebra/view/Stol.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Igra");
+        stage.setScene(new Scene(root, 1024, 768));
+        stage.show();
     }
-    
+
 }
