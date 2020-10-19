@@ -1,9 +1,10 @@
 package hr.algebra.model.enums;
 
+import hr.algebra.model.interfaces.Rangiranje;
 import java.util.HashMap;
 import java.util.Map;
 
-public enum Rang {
+public enum Rang implements Rangiranje {
     SEDAM("Sedmica", 0, 0, 7),
     OSAM("Osmica", 0, 0, 8),
     DEVET("Devetka", 0, 14, 9),
@@ -42,17 +43,37 @@ public enum Rang {
     public String toString() {
         return ime;
     }
-    
-        public static Rang getVrijednost(int vrijednost) {
+
+    @Override
+    public Integer getRedosljed() {
+        return redosljed;
+    }
+
+    @Override
+    public Integer getVrijednost() {
+        return vrijednost;
+    }
+
+    @Override
+    public Integer getVrijednostAdut() {
+        return vrijednost_adut;
+    }
+
+    @Override
+    public String getIme() {
+        return ime;
+    }
+
+    public static Rang getVrijednost(int vrijednost) {
         return PO_VRIJEDNOSTI.get(vrijednost);
     }
 
-    public static Rang getVrijednostAdut(int vrijednost) {
-        return PO_VRIJEDNOSTI_ADUT.get(vrijednost);
+    public static Rang getVrijednostAdut(int vrijednost_adut) {
+        return PO_VRIJEDNOSTI_ADUT.get(vrijednost_adut);
     }
 
-    public static Rang getRedosljed(int vrijednost) {
-        return PO_REDOSLJEDU.get(vrijednost);
+    public static Rang getRedosljed(int redosljed) {
+        return PO_REDOSLJEDU.get(redosljed);
     }
 
     public static Rang getIme(String ime) {

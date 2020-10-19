@@ -34,4 +34,11 @@ public class Karta {
     public void Okreni() {
         okrenuta = !okrenuta;
     }
+    public String getBoja(){
+        return this.boja.toString();
+    }
+    public Integer getRang(){
+        return this.rang.getRedosljed();   
+    }
+
 }
