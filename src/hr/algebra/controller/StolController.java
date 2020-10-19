@@ -5,6 +5,8 @@
  */
 package hr.algebra.controller;
 
+import hr.algebra.model.Karta;
+import hr.algebra.model.Spil;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -34,7 +36,8 @@ public class StolController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        Spil spil = new Spil("novi");
+        
     }    
     
 }

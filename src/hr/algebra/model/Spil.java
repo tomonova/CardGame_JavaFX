@@ -10,7 +10,7 @@ public class Spil {
     private final Stack<Karta> spilKarata;
 
     public Spil(String tip) {
-        spilKarata = new Stack<Karta>();
+        spilKarata = new Stack<>();
         if (tip == "novi") {
             for (Boja boja : Boja.values()) {
                 for (Rang rang : Rang.values()) {
