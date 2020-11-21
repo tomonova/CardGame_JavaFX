@@ -13,6 +13,8 @@ public interface Rangiranje {
 
     Integer getRedosljed();
 
+    Integer getRedosljedAdut();
+
     Integer getVrijednost();
 
     Integer getVrijednostAdut();

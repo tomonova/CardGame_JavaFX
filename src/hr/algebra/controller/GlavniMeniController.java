@@ -15,21 +15,25 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author TomoNova
- */
 public class GlavniMeniController implements Initializable {
-
+    private String ime;
     @FXML
     private Button btnIgraj;
+    @FXML
+    private TextArea txtIme;
+    @FXML
+    private Label lblIme;
 
-    /**
-     * Initializes the controller class.
-     */
+    public String getIme() {
+        return ime;
+    }
+    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -37,10 +41,23 @@ public class GlavniMeniController implements Initializable {
 
     @FXML
     private void BtnIgraj_Click(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/hr/algebra/view/Stol.fxml"));
+        ime=txtIme.getText().trim();
+        if (ime==null || ime.isEmpty()) {
+            lblIme.setText("Ne meže bez imena!!!");
+            return;
+        }
+//        Parent root = FXMLLoader.load(getClass().getResource("/hr/algebra/view/Stol.fxml"));
+//        Stage stage = new Stage();
+//        stage.setTitle("Igra");
+//        stage.setScene(new Scene(root, 1024, 768));
+//        stage.show();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/hr/algebra/view/Stol.fxml"));
+        Parent root = loader.load();
+        StolController stolController = loader.getController();
         Stage stage = new Stage();
         stage.setTitle("Igra");
         stage.setScene(new Scene(root, 1024, 768));
+        stolController.postaviImeIgraca(ime);
         stage.show();
     }
 
